@@ -1,0 +1,442 @@
+Constructor -
+
+- It is a member function
+- used to execute limited set of instructions
+- constructors cant support data types at the time of its declaration
+- t = new (constrcutor)
+- JAVA does not support overriding
+- cant support type declarations
+- executed automatically
+- Note: implemented in object classes
+-------------------------------------------
+3 types of constructors:
+1. Default const
+2. No Argument const
+3. Parametrised Constructor
+
+
+1. Default Constrcutor:
+	- invoked automatically , based on JVM class
+	- Note: every driver class automatically extends to JVM inbuilt super class
+	
+	test case : Create a project (DefConsProject) and execute default constructor.
+	- used to driver class object implicitly.
+	- t = new <constructor name>
+2. No Argument Constructor:
+	- used to divide class into modules
+	- to create internal code blocks in object class
+	test case:
+		create a project named as "NOargconsproject"	
+		add one object class
+		add one driver class
+		execute No argument const
+3. Parameter Constructor:
+	- used to implement message passing
+	- to pass the message from object to related constructor
+	test case:
+		add object class
+		add parameterised constructor in object class
+		execute constructor with message passing
+		
+--------------------------
+Methods:
+
+- to divide the class into intermal code blocks
+- to reduce the code complexity
+ 
+- functional methods
+- accesor methods (getters)
+- mutator methods (setters)
+
+1. Functional Methods :	
+	4 types.
+
+
+2. Overloading:
+	- to reuse the allocated memory
+	- to save memory
+	
+	- constrcutor overloading
+	- functional Overloading
+	
+	logic : a class contains more than one function , all  are same but way of implementation is different
+Constructor Overloading :
+	public class consoverload {
+	consoverload(){
+		System.out.println("No arg constructor");
+	}
+	consoverload(int x){
+		System.out.println("From with arg no return " + x);
+	}
+	consoverload(int x , int y){
+		System.out.println("From with arg with return" + (x+y));
+//		return (x+y)
+	}
+}
+
+Access Modifiers:
+	- data control and data retrictions are implemented
+	- RBAC (RollBased access control)
+
+	1. Public
+	2. Private
+	3. protected
+	4. default
+1. Public:
+	- This is Global Modifier
+	- any area can access
+	- universal modifier
+	public int x;//public variable
+	public void display();// public member function
+	public class test{} //public class
+2. Private:
+	- It is restricted to one block
+
+	private int x;//private variable
+	private void display();// private member function
+	public class test{} // private class
+
+3. Protected:
+	- Retricted to 2 code blocks
+	protected int x;
+
+default : 
+	- n number of code block access use default
+
+INHERITANCE:
+- Acquiring the properties from one class to other class
+- member re-usability
+
+relationship:
+	- exchaninging of properties between classes
+	- is-a relationship
+	- has-a relationship
+
+relationship:-
+
+class <class name> extends <other class name>{
+	----
+}
+
+is-a relationship:
+
+class test1{ //super class
+	
+}
+class test2 extends test1{ //sub class
+	
+}
+
+has-a relationship:
+class superclass{
+	
+}
+class subcls extends superclass{
+	
+}
+class derivedclass extends subcls{
+
+}
+
+NOte: in all inheritances last class is called object instantiated class
+
+
+Single Inheritance:
+	
+
+Hierarchial Inheritance:
+	--> one superclass and many sub classes
+	--> many sub classes - atleast 2 subclasses are required 
+	
+
+	testcases:
+	create one project , add one superclass (supercls) , add three sub classes and create methods.
+
+
+Interview** -
+	what is unreferenced object in Java?
+	A) Testdemo s1,s2,s3;
+	   s1 = newdemo();
+	here s2 and s3 are not referenced so they are called as unreferenced object.
+	these unref objects are automatically deleted during execution.
+	This mechanism is called as garbage collector - System.gc() --> invoked in JVM.
+
+CODEBLOCKS :-
+	- general code blocks
+	- conditional and function based codeblocks.
+	
+
+	- general code blocks :-
+
+	classes , interfaces , packages.
+
+	syntax -
+		<indentifier_name>{
+		------		
+
+		}
+		class test{
+		
+		}
+
+	- conditional and functional codeblocks :-
+
+	methods , loops , conditions.
+
+	syntax : 	
+		<data type><indentifier name>(params..){
+		------
+		------	
+		}
+	example:
+		void display(int x){
+		----	
+		}
+
+Conditional Blocks:
+	simple if , nested if , if-else , if-else-if , switch(elseif ladder)
+	
+	simple if:
+		- no false stmt
+		- single condition
+		syntax : if(cond){---}
+
+	nested if:
+		- Logical AND operation
+		- No else part
+		if()
+			if()
+				..... n-times
+		- if any one condition breaks then whole thing falls apart
+	
+	if-else-if:
+		if()
+		else if()
+		else()
+
+Looping code blocks :
+- simple , nested .
+
+	simple :
+		int x=0;
+		for(;x<5;x++){
+			sout(x);	
+		}
+	
+PACKAGES:
+
+- Inbuilt Packages
+- User Defined Packages
+
+Inbuilt Packages :- (system defined / existing)
+
+- these are available in software . we use these packages directly.
+
+Note:
+- contains program structure
+- function syntaxes
+- declaration syntaxes
+- DLL's
+
+pre-defined classes are available in this ,
+
+ex:
+java.io.*;
+java.util.*;
+java.lang.*;
+java.net.*;
+..etc.
+
+to add inbuilt packages use import
+import java.io.*;
+
+User Defined Packages:-
+
+package <package name>;
+
+Ex:
+package task;
+
+steps to create package in Eclipse :
+	- open Eclipse IDE
+	- create project
+	- click on new package
+	- give package name and finish
+
+project:
+	-- default package --> driver method
+	-- CBIT --> objcls1 , 2 , 3 (hno , sname , branch , year , phone)
+	-- MGIT --> testcls1 , 2 , 3 ("")
+	-- TASK --> 
+
+Static Block In Java :
+	--> Invoked before Before loading domain method
+	--> Used to Initialize static method
+
+	syn : 
+		static {
+		
+		}
+
+	--> static shud be only in driver class.
+	--> invoked without main method.
+	
+Console input :
+	--> to accept values from the users at runtime.
+	--> Inbuilt package -> java.util.Scanner;
+	syn :
+		Scanner <object-name> {
+			<object-name> = new Scanner(System.in);
+		}
+	ex:
+		Scanner s;
+		s = new Scanner(System.in);
+	Methods related to Scanner Class:
+		1. next() --> words
+		2. nextInt() --> To Numerical Data
+		3. nextline() --> paragraph
+
+Strings In JAVA :
+
+	String <string Obj>;
+	<string obj> = "message";
+
+	 or
+	
+	String <string Obj>;
+	<string Obj> = new String("Message");
+
+Arrays In Java:
+	
+	Declaration :
+		<data-type> <container> [size];
+		 
+		ex :
+			int a[5];
+
+Super and Super() In Java:
+
+	super --> to invoke immediate superclass.
+	super() --> to invoke superclass constructor.
+
+	variables shud be in protected or in public.
+	
+Nested CLasses:
+	
+---
+
+Enumeration in JAVA:
+	used to creare fixed constants like weekdays , directions , it is a user defined data type.
+	ex :
+		days - sun , mon , tues 
+		courses - cse , ece , eee , civil , mech
+	syn : 
+		enum <identifier-name>{val1 , val2 , val3..};
+	
+	ex(weekdays constants):
+		enum week_days {sun , mon , .... , sat}
+	
+	--> enumeration shud be always out of the main method like structures in C.
+
+INTERFACES In JAVA:
+	--> An interface is a blueprint of a class.
+	--> it has static constants and abstract methods.
+	--> cannot instantiate OBJECTS .
+	
+	--> used to declare data members and member functions it cant support definitions
+	
+	syn : 
+		declaration of interface
+		
+		interface <interface name>{
+
+		}	
+	
+	CLASSES 					INTERFACE
+
+	1. Declaration and definitions are 		1. Only declarations are supported
+	supported 				
+	
+
+	----------------------------------------------------------------------------------
+	--> How to create interface in eclipse:
+	
+	1. Create project
+	2. New -> Interface
+	3. Add methods in Interface.
+
+	public interface MyInf {
+		void display();
+	}
+	
+	4. public class Objcls implements MyInf
+
+	
+Multiple Inheritance :
+
+
+	Interface      SuperClass
+	    |	           |
+	    |______________|
+		    |
+		    |
+		 SubClass
+		    |
+  		DriverCLass 	
+
+
+	public class subclass extends SuperClass implements MyInf {
+		public void display1() {
+			System.out.println("My Inf is invoked");
+		}
+	}
+
+Exception Handling in JAVA:
+	To handle the runtime errors that effect the normal flow of the program.
+
+	types :
+		--> Checked Exception
+		--> Unchecked Exception
+		--> Error
+
+	Checked exception:
+
+		All inbuilt exception are called as Checked exception.
+		IO exception , SQL exception.
+	
+	Unchecked exception :
+		
+		During runtime .
+		ex : Arthematic Exception , Nullpointer exception.
+	
+	To implement exception handling using try and catch block:
+		try {
+		
+		}
+		catch :-
+
+		try and catch is mandatory but finally is optional . 
+		
+		throw :- 
+			used to throw an exception.
+		
+		finally :- 
+			the finally block is used to execute the necessary code of program.
+		
+		
+last topic:
+	JDBC - Java Database connectivity
+	
+	backend - Java
+	database - oracle database (relational storage structure) - model
+	
+	cretae a newtable:
+		create table <tablename>( .... );
+
+	insert record :
+		insert into <tablename> values(101 , 'ramesh' );
+
+
+
+
+
